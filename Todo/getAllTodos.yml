@@ -1,0 +1,35 @@
+info:
+  name: getAllTodos
+  type: graphql
+  seq: 4
+
+graphql:
+  method: POST
+  url: http://localhost:3000/graphql
+  body:
+    query: |-
+      query GetTodos($todoListId: Int!) {
+        todos(todoListId: $todoListId) {
+          id
+          title
+          description
+          isDone
+          deadline
+          attachments {
+            id
+            originalName
+            mimeType
+            size
+          }
+        }
+      }
+    variables: '{ "todoListId": 6 }'
+  auth:
+    type: bearer
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjYsInVzZXJuYW1lIjoicGFzc0lzdXNlcjIiLCJ0eXBlIjoiYWNjZXNzIiwiaWF0IjoxNzgxNDQ0ODA2LCJleHAiOjE3ODE0NDY2MDZ9.nYs3wbdMNBYDLanBvkZA14Zvpwm_-vKWuyqIbousdKY
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

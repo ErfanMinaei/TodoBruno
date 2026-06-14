@@ -1,0 +1,26 @@
+info:
+  name: demoteFromAdmin
+  type: graphql
+  seq: 8
+
+graphql:
+  method: POST
+  url: http://localhost:3000/graphql
+  body:
+    query: |-
+      mutation DemoteFromAdmin($userId: Int!) {
+        demoteFromAdmin(userId: $userId) {
+          id
+          roles
+        }
+      }
+    variables: '{ "userId": 3 }'
+  auth:
+    type: bearer
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsInVzZXJuYW1lIjoic3VwZXJhZG1pbiIsInR5cGUiOiJhY2Nlc3MiLCJpYXQiOjE3ODE0NTE1MTYsImV4cCI6MTc4MTQ1MzMxNn0.oXwbtgzDEcul3W-gYy9jQzD2-Qk919oHTLYq6mfX-H4
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

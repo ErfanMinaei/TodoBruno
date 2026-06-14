@@ -1,0 +1,25 @@
+info:
+  name: AdminGetAllTodos
+  type: graphql
+  seq: 1
+
+graphql:
+  method: POST
+  url: http://localhost:3000/graphql
+  body:
+    query: |-
+      query AdminTodos($todoListId: Int!) {
+        adminTodos(todoListId: $todoListId) {
+          id
+          title
+          todoList { title user { username } }
+        }
+      }
+    variables: '{ "todoListId": 6 }'
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

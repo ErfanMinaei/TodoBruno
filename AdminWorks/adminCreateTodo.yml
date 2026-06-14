@@ -1,0 +1,31 @@
+info:
+  name: adminCreateTodo
+  type: graphql
+  seq: 4
+
+graphql:
+  method: POST
+  url: http://localhost:3000/graphql
+  body:
+    query: |-
+      mutation AdminCreateTodo($input: CreateTodoInput!) {
+        adminCreateTodo(input: $input) { id title }
+      }
+    variables: |-
+      {
+        "input": {
+          "title": "Example admin todo",
+          "description": "This is a todo created by an admin",
+          "deadline": "2026-12-31T23:59:59Z",
+          "todoListId": 7
+        }
+      }
+  auth:
+    type: bearer
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsInVzZXJuYW1lIjoic3VwZXJhZG1pbiIsInR5cGUiOiJhY2Nlc3MiLCJpYXQiOjE3ODE0NTE1MTYsImV4cCI6MTc4MTQ1MzMxNn0.oXwbtgzDEcul3W-gYy9jQzD2-Qk919oHTLYq6mfX-H4
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

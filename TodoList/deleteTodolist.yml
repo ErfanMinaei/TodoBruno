@@ -1,0 +1,23 @@
+info:
+  name: deleteTodolist
+  type: graphql
+  seq: 3
+
+graphql:
+  method: POST
+  url: http://localhost:3000/graphql
+  body:
+    query: |-
+      mutation DeleteTodoList($id: Int!) {
+        deleteTodoList(id: $id)
+      }
+    variables: '{ "id": 5 }'
+  auth:
+    type: bearer
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjYsInVzZXJuYW1lIjoicGFzc0lzdXNlcjIiLCJ0eXBlIjoiYWNjZXNzIiwiaWF0IjoxNzgxNDQyNTM3LCJleHAiOjE3ODE0NDQzMzd9.4bs8RKGxzIBpEFXEVb9kWMZXVX51Ch6ExMn-1r5Bxtw
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

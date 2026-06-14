@@ -1,0 +1,26 @@
+info:
+  name: createTodolist
+  type: graphql
+  seq: 1
+
+graphql:
+  method: POST
+  url: http://localhost:3000/graphql
+  body:
+    query: |-
+      mutation CreateTodoList($input: CreateTodoListInput!) {
+        createTodoList(input: $input) {
+          id
+          title
+        }
+      }
+    variables: '{ "input": { "title": "todolist1" } }'
+  auth:
+    type: bearer
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjYsInVzZXJuYW1lIjoicGFzc0lzdXNlcjIiLCJ0eXBlIjoiYWNjZXNzIiwiaWF0IjoxNzgxNDM5NzM3LCJleHAiOjE3ODE0NDE1Mzd9.PHDtIKKlHaXeA7cYc0DfjCTYEfdi-Gh64b6aOU9e8IQ
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

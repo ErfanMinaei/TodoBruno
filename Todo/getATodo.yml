@@ -1,0 +1,30 @@
+info:
+  name: getATodo
+  type: graphql
+  seq: 5
+
+graphql:
+  method: POST
+  url: http://localhost:3000/graphql
+  body:
+    query: |-
+      query GetTodo($id: Int!) {
+        todo(id: $id) {
+          id
+          title
+          description
+          isDone
+          deadline
+          todoList { title }
+        }
+      }
+    variables: '{ "id": 4 }'
+  auth:
+    type: bearer
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjYsInVzZXJuYW1lIjoicGFzc0lzdXNlcjIiLCJ0eXBlIjoiYWNjZXNzIiwiaWF0IjoxNzgxNDQ0ODA2LCJleHAiOjE3ODE0NDY2MDZ9.nYs3wbdMNBYDLanBvkZA14Zvpwm_-vKWuyqIbousdKY
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

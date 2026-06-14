@@ -1,0 +1,26 @@
+info:
+  name: updateTodoList
+  type: graphql
+  seq: 2
+
+graphql:
+  method: POST
+  url: http://localhost:3000/graphql
+  body:
+    query: |-
+      mutation UpdateTodoList($id: Int!, $input: UpdateTodoListInput!) {
+        updateTodoList(id: $id, input: $input) {
+          id
+          title
+        }
+      }
+    variables: '{ "id": 4, "input": { "title": "updatedTodolist" } }'
+  auth:
+    type: bearer
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjYsInVzZXJuYW1lIjoicGFzc0lzdXNlcjIiLCJ0eXBlIjoiYWNjZXNzIiwiaWF0IjoxNzgxNDQwMTYzLCJleHAiOjE3ODE0NDE5NjN9.9icnb4LHQg5TKirba2zRZHXHX2nPoQqE4WFzBwpgxzM
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

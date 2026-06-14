@@ -1,0 +1,28 @@
+info:
+  name: updateSelf
+  type: graphql
+  seq: 6
+
+graphql:
+  method: POST
+  url: http://localhost:3000/graphql
+  body:
+    query: |-
+      mutation UpdateSelf($input: UpdateUserInput!) {
+        updateSelf(input: $input) {
+          id
+          username
+          firstName
+          lastName
+        }
+      }
+    variables: '{ "input": { "firstName": "updateduser","username":"passIsuser11", "currentPassword": "user1", "newPassword": "user11" } }'
+  auth:
+    type: bearer
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsInVzZXJuYW1lIjoicGFzc0lzdXNlcjEiLCJ0eXBlIjoiYWNjZXNzIiwiaWF0IjoxNzgxNDUxODA1LCJleHAiOjE3ODE0NTM2MDV9.NG_RWPbO4cqGScnkyOLqUnCoeRDerDSaqIz_qnrOF-0
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

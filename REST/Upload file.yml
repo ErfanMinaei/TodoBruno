@@ -1,0 +1,29 @@
+info:
+  name: Upload file
+  type: http
+  seq: 1
+
+http:
+  method: PUT
+  url: "{{baseUrl}}/file/upload?todoId=1"
+  headers:
+    - name: Authorization
+      value: Bearer {{accessToken}}
+  params:
+    - name: todoId
+      value: "1"
+      type: query
+  body:
+    type: multipart-form
+    data:
+      - name: file
+        type: file
+        value:
+          - /path/to/sample.pdf
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

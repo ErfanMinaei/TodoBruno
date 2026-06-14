@@ -1,0 +1,21 @@
+info:
+  name: unattachFile
+  type: graphql
+  seq: 1
+
+graphql:
+  method: POST
+  url: http://localhost:3000/graphql
+  body:
+    query: |-
+      mutation UnattachFile($id: String!) {
+        unattachFile(id: $id)
+      }
+    variables: '{ "id": "550e8400-e29b-41d4-a716-446655440000" }'
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

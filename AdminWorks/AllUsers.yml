@@ -1,0 +1,28 @@
+info:
+  name: AllUsers
+  type: graphql
+  seq: 3
+
+graphql:
+  method: POST
+  url: http://localhost:3000/graphql
+  body:
+    query: |-
+      query GetAllUsers {
+        allUsers {
+          id
+          username
+          firstName
+          lastName
+          roles
+        }
+      }
+  auth:
+    type: bearer
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsInVzZXJuYW1lIjoic3VwZXJhZG1pbiIsInR5cGUiOiJhY2Nlc3MiLCJpYXQiOjE3ODE0NDg5NDYsImV4cCI6MTc4MTQ1MDc0Nn0.Hse_POhuEaJfIA6u7f7qigZppKTeQfgoy8nQattbLxg
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

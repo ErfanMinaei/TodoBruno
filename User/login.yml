@@ -18,8 +18,8 @@ graphql:
     variables: |-
       {
         "input": {
-          "username": "passIsadmin1",
-          "password": "admin1"
+          "username": "superadmin",
+          "password": "superAdmin123!"
         }
       }
   auth: inherit
