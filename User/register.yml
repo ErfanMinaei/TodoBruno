@@ -1,0 +1,25 @@
+info:
+  name: register
+  type: graphql
+  seq: 2
+
+graphql:
+  method: POST
+  url: http://localhost:3000/graphql
+  body:
+    query: |-
+      mutation Register($input: RegisterUserInput!) {
+        register(input: $input) {
+          accessToken
+          refreshToken
+          user { id username roles }
+        }
+      }
+    variables: '{ "input": { "firstName": "user", "lastName": "2", "username": "passIsuser2", "password": "user2" } }'
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

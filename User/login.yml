@@ -1,0 +1,31 @@
+info:
+  name: login
+  type: graphql
+  seq: 1
+
+graphql:
+  method: POST
+  url: http://localhost:3000/graphql
+  body:
+    query: |-
+      mutation Login($input: LoginInput!) {
+        login(input: $input) {
+          accessToken
+          refreshToken
+          user { id username roles }
+        }
+      }
+    variables: |-
+      {
+        "input": {
+          "username": "passIsadmin1",
+          "password": "admin1"
+        }
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,23 @@
+info:
+  name: logout
+  type: graphql
+  seq: 4
+
+graphql:
+  method: POST
+  url: http://localhost:3000/graphql
+  body:
+    query: |-
+      mutation Logout($refreshToken: String!) {
+        logout(refreshToken: $refreshToken)
+      }
+    variables: '{ "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjYsInVzZXJuYW1lIjoicGFzc0lzdXNlcjIiLCJ0eXBlIjoicmVmcmVzaCIsImlhdCI6MTc4MTQzNjQ3MCwiZXhwIjoxNzg0MDI4NDcwfQ.nDL3Q_pXAh2sIDOkEAfV6VP1GkibgMuPzuvuOb74DSA" }'
+  auth:
+    type: bearer
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjYsInVzZXJuYW1lIjoicGFzc0lzdXNlcjIiLCJ0eXBlIjoiYWNjZXNzIiwiaWF0IjoxNzgxNDM2NDcwLCJleHAiOjE3ODE0MzgyNzB9.m7OC0vXUxteXFgWFeYZVkpQvQuvtAU5gB-L154ZwvGs
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
