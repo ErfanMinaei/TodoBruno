@@ -5,7 +5,7 @@ info:
 
 graphql:
   method: POST
-  url: http://localhost:3000/graphql
+  url: "{{graqphQLURl}}"
   body:
     query: |-
       query AdminTodos($todoListId: Int!) {
@@ -16,7 +16,9 @@ graphql:
         }
       }
     variables: '{ "todoListId": 6 }'
-  auth: inherit
+  auth:
+    type: bearer
+    token: "{{accessToken}}"
 
 settings:
   encodeUrl: true

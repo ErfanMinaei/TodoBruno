@@ -5,16 +5,16 @@ info:
 
 graphql:
   method: POST
-  url: http://localhost:3000/graphql
+  url: "{{graqphQLURl}}"
   body:
     query: |-
       mutation Logout($refreshToken: String!) {
         logout(refreshToken: $refreshToken)
       }
-    variables: '{ "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjYsInVzZXJuYW1lIjoicGFzc0lzdXNlcjIiLCJ0eXBlIjoicmVmcmVzaCIsImlhdCI6MTc4MTQzNjQ3MCwiZXhwIjoxNzg0MDI4NDcwfQ.nDL3Q_pXAh2sIDOkEAfV6VP1GkibgMuPzuvuOb74DSA" }'
+    variables: '{ "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsInVzZXJuYW1lIjoic3VwZXJhZG1pbiIsInR5cGUiOiJyZWZyZXNoIiwiaWF0IjoxNzgxNDQ4OTM0LCJleHAiOjE3ODQwNDA5MzR9.4uuvDkYKNu0wirHL_jYN4JwI1eikQOTgoVy77lpll1s" }'
   auth:
     type: bearer
-    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjYsInVzZXJuYW1lIjoicGFzc0lzdXNlcjIiLCJ0eXBlIjoiYWNjZXNzIiwiaWF0IjoxNzgxNDM2NDcwLCJleHAiOjE3ODE0MzgyNzB9.m7OC0vXUxteXFgWFeYZVkpQvQuvtAU5gB-L154ZwvGs
+    token: "{{accessToken}}"
 
 settings:
   encodeUrl: true

@@ -5,7 +5,7 @@ info:
 
 graphql:
   method: POST
-  url: http://localhost:3000/graphql
+  url: "{{graqphQLURl}}"
   body:
     query: |-
       mutation Register($input: RegisterUserInput!) {
@@ -15,7 +15,7 @@ graphql:
           user { id username roles }
         }
       }
-    variables: '{ "input": { "firstName": "user", "lastName": "2", "username": "passIsuser2", "password": "user2" } }'
+    variables: '{ "input": { "firstName": "user", "lastName": "1", "username": "passIsuser1", "password": "user1" } }'
   auth: inherit
 
 settings:

@@ -5,7 +5,7 @@ info:
 
 graphql:
   method: POST
-  url: http://localhost:3000/graphql
+  url: "{{graqphQLURl}}"
   body:
     query: |-
       mutation AdminCreateTodoList($userId: Int!, $input: CreateTodoListInput!) {
@@ -14,7 +14,7 @@ graphql:
     variables: '{ "userId": 3, "input": { "title": "Project alpha" } }'
   auth:
     type: bearer
-    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsInVzZXJuYW1lIjoic3VwZXJhZG1pbiIsInR5cGUiOiJhY2Nlc3MiLCJpYXQiOjE3ODE0NTE1MTYsImV4cCI6MTc4MTQ1MzMxNn0.oXwbtgzDEcul3W-gYy9jQzD2-Qk919oHTLYq6mfX-H4
+    token: "{{accessToken}}"
 
 settings:
   encodeUrl: true

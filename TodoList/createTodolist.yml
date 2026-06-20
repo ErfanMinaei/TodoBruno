@@ -5,7 +5,7 @@ info:
 
 graphql:
   method: POST
-  url: http://localhost:3000/graphql
+  url: "{{graqphQLURl}}"
   body:
     query: |-
       mutation CreateTodoList($input: CreateTodoListInput!) {
@@ -17,7 +17,7 @@ graphql:
     variables: '{ "input": { "title": "todolist1" } }'
   auth:
     type: bearer
-    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjYsInVzZXJuYW1lIjoicGFzc0lzdXNlcjIiLCJ0eXBlIjoiYWNjZXNzIiwiaWF0IjoxNzgxNDM5NzM3LCJleHAiOjE3ODE0NDE1Mzd9.PHDtIKKlHaXeA7cYc0DfjCTYEfdi-Gh64b6aOU9e8IQ
+    token: "{{accessToken}}"
 
 settings:
   encodeUrl: true

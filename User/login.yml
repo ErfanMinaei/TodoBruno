@@ -5,7 +5,10 @@ info:
 
 graphql:
   method: POST
-  url: http://localhost:3000/graphql
+  url: "{{graqphQLURl}}"
+  headers:
+    - name: ""
+      value: ""
   body:
     query: |-
       mutation Login($input: LoginInput!) {
@@ -22,7 +25,6 @@ graphql:
           "password": "superAdmin123!"
         }
       }
-  auth: inherit
 
 settings:
   encodeUrl: true
